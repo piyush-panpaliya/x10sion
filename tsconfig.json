@@ -15,7 +15,8 @@
     "jsx": "react",
     "baseUrl": ".",
     "paths": {
-      "@*": ["src/*"]
+      "@/*": ["src/*"],
+      "@lib/*": ["lib/*"]
     },
 
     /* Linting */
@@ -25,8 +26,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["*/**.ts", "*/**.tsx", "vite.config.ts"],
+  "include": ["src", "vite.config.ts", "vite-env.d.ts"],
   "exclude": ["/node_modules", "/dist"],
-  "references": [{ "path": "./tsconfig.node.json" }],
+  // "references": [{ "path": "./tsconfig.node.json" }],
   "types": ["chrome", "node"]
 }

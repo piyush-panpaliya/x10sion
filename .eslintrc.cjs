@@ -6,7 +6,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
     'plugin:react/recommended',
-    'airbnb',
+    // 'airbnb',
     'prettier',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
