@@ -1,6 +1,21 @@
-import React, { JSX } from 'react';
+import React, { JSX, useEffect } from 'react'
+
+import { rpc } from '@/utils/bgCaller'
 
 export default function Popup(): JSX.Element {
+  useEffect(() => {
+    ;(async () => {
+      try {
+        const res = await rpc('signin', {
+          username: 'admin',
+          password: 'admin',
+        })
+        console.log(res)
+      } catch (e) {
+        console.error(e)
+      }
+    })()
+  }, [])
   return (
     <div id='my-ext' className='container' data-theme='light'>
       <button type='button' className='btn btn-outline'>
@@ -16,5 +31,5 @@ export default function Popup(): JSX.Element {
         Accent
       </button>
     </div>
-  );
+  )
 }

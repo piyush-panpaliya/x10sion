@@ -9,28 +9,28 @@
  * @module index.dev
  */
 
-import React from 'react';
-import { createRoot } from 'react-dom/client';
+import React from 'react'
+import { createRoot } from 'react-dom/client'
 
-import Content from './Content';
+import Content from './Content'
 
-import '@assets/styles/index.css';
+import '@assets/styles/index.css'
 
-const container = document.createElement('div');
+const container = document.createElement('div')
 
 // Get the style element corresponding to the CSS file
-const styleElement = document.querySelector('style[data-vite-dev-id]');
+const styleElement = document.querySelector('style[data-vite-dev-id]')
 
 if (!styleElement) {
-  throw new Error('Style element with attribute data-vite-dev-id not found.');
+  throw new Error('Style element with attribute data-vite-dev-id not found.')
 }
 
 // Attach the style element to the shadow root
-const shadowRoot = container.attachShadow({ mode: 'open' });
-shadowRoot.appendChild(styleElement);
+const shadowRoot = container.attachShadow({ mode: 'open' })
+shadowRoot.appendChild(styleElement)
 
-document.body.appendChild(container);
+document.body.appendChild(container)
 
 // Render the application inside the shadow root
-const root = createRoot(shadowRoot);
-root.render(<Content />);
+const root = createRoot(shadowRoot)
+root.render(<Content />)

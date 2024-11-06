@@ -1,13 +1,22 @@
-/* eslint-disable react/self-closing-comp */
-/* eslint-disable jsx-a11y/control-has-associated-label */
-/* eslint-disable react/button-has-type */
-/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { JSX } from 'react';
+import React, { JSX, useEffect } from 'react'
+
+import { rpc } from '@/utils/bgCaller'
 
 export default function Content(): JSX.Element {
+  useEffect(() => {
+    ;(async () => {
+      try {
+        alert(1)
+        const res = await rpc('signin', {
+          username: 'admin',
+          password: 'admin',
+        })
+        console.log(res)
+      } catch (e) {
+        console.error(e)
+      }
+    })()
+  }, [])
   return (
     <div id='my-ext' className='container' data-theme='light'>
       <div className='mx-auto w-72 rounded-xl bg-white p-4 shadow-lg dark:bg-gray-800'>
@@ -500,5 +509,5 @@ export default function Content(): JSX.Element {
         </table>
       </div>
     </div>
-  );
+  )
 }
