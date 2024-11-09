@@ -1,5 +1,5 @@
-import { bgCaller } from '../../lib/bg-caller'
-import { Caller } from '../../lib/bg-caller/types'
-import { ControllerRecord } from '../background'
+import { bgCaller } from '@lib/bg-caller'
 
-export const rpc: Caller<ControllerRecord> = bgCaller
+import { RouterTypes } from '../background'
+
+export const rpc = bgCaller<RouterTypes>()

@@ -1,24 +1,17 @@
-import { createRPC } from '../../lib/bg-caller'
+import { createRouter, handleRPC } from '@lib/bg-caller'
+
+import { fooRouter } from './api/foo'
+import { userRouter } from './api/user'
 
 const controllers = {
-  sayHello: (name: string) => `Hello, ${name}!`,
-  add: (a: number, b: number) => {
-    return a + b
-  },
   p: async ({ a, b }: { a: number; b: number }) => {
     return Promise.resolve(a + b)
   },
-  signin: async ({
-    username,
-    password,
-  }: {
-    username: string
-    password: string
-  }) => {
-    console.log('signin', username, password)
-    return Promise.resolve({ username, msg: 'signin done' })
-  },
+  foo: fooRouter,
+  user: userRouter,
 }
-createRPC(controllers)
+const rootRouter = createRouter(controllers)
 
-export type ControllerRecord = typeof controllers
+handleRPC(rootRouter)
+
+export type RouterTypes = typeof rootRouter
