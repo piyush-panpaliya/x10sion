@@ -6,7 +6,7 @@ export default function Popup(): JSX.Element {
   useEffect(() => {
     ;(async () => {
       try {
-        const res = await rpc('signin', {
+        const res = await rpc('user.signin', {
           username: 'admin',
           password: 'admin',
         })

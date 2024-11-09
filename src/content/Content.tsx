@@ -7,7 +7,7 @@ export default function Content(): JSX.Element {
     ;(async () => {
       try {
         alert(1)
-        const res = await rpc('signin', {
+        const res = await rpc('user.signin', {
           username: 'admin',
           password: 'admin',
         })

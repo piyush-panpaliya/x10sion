@@ -1,9 +1,10 @@
-import React from 'react';
-import styles from '@assets/styles/index.css?inline';
-import createShadowRoot from '@utils/createShadowRoot';
+import React from 'react'
+import styles from '@assets/styles/index.css?inline'
 
-import Popup from './Popup';
+import createShadowRoot from '@/utils/createShadowRoot'
 
-const root = createShadowRoot(styles);
+import Popup from './Popup'
 
-root.render(<Popup />);
+const root = createShadowRoot(styles)
+
+root.render(<Popup />)

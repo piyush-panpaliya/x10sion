@@ -17,6 +17,7 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    '@typescript-eslint/no-explicit-any': 'off',
     'react/jsx-filename-extension': 'off',
     'import/extensions': 'off',
     'no-unused-vars': 'off',
@@ -39,4 +40,4 @@ module.exports = {
       },
     },
   },
-};
+}
